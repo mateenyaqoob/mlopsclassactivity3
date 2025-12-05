@@ -1,0 +1,2 @@
+-Added a data folder to fix the error from preprocess.py
+-added a hello.txt (this file) since git ignores empty folders
