@@ -1,0 +1,2 @@
+-- Added a data folder to fix the error from preprocess.py (no such folder exists)
+-- added a reasoning.txt (this file) since git ignores empty folders

@@ -16,11 +16,18 @@ Activity Steps:
 
 Discussion Questions:
 1 How does CI/CD improve collaboration in ML teams?
+- It ensures that all team members work on the same code and data, automatically tests training and evaluation, and catches errors early, so models and pipelines remain consistent.
+
 2 What happens if the evaluation score is below a defined threshold?
+- The quality gate (or evaluator, depending on implementation) will throw an error which causes workflow execution to stop with a flag / exit status code
+
 3 How can retraining or drift detection be integrated into this workflow?
+ -Add steps to check data and model drift; if drift is detected or metrics drop, automatically trigger retraining within the pipeline.
+
 4 What steps are needed to deploy this workflow to production (e.g., AWS, Kubernetes)?
+ -Package the model in a container or TFX pipeline, push to a registry, and deploy using a cloud service (AWS, GCP) or Kubernetes. Automate deployment with CI/CD tools like Jenkins.
 
 Deliverables:
-1 GitHub repository link containing your implemented workflow.
-2 Screenshot of a successful workflow run with artifacts visible.
-3 (Optional) Modified workflow with PR trigger or quality gate step.
+1 GitHub repository link containing your implemented workflow. - done
+2 Screenshot of a successful workflow run with artifacts visible. - done
+3 (Optional) Modified workflow with PR trigger or quality gate step. - done

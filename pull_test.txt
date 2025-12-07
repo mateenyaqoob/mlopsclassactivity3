@@ -1,0 +1,1 @@
+A dummy file to check whether the pull_requests trigger works properly.
