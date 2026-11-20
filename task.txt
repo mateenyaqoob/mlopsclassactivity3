@@ -13,14 +13,21 @@ Activity Steps:
 4. Trigger the workflow by making a small change (e.g., edit README.md) and pushing to main.
 5. Observe the workflow execution in the GitHub Actions tab.
 6. Download the trained model artifact from the Actions run results.
+Discussion Questions
 
-Discussion Questions:
-1 How does CI/CD improve collaboration in ML teams?
-2 What happens if the evaluation score is below a defined threshold?
-3 How can retraining or drift detection be integrated into this workflow?
-4 What steps are needed to deploy this workflow to production (e.g., AWS, Kubernetes)?
+How does CI/CD improve collaboration in ML teams?
+By establishing a single, automated process for testing code, data, and models, CI/CD ensures consistency and reproducibility. It facilitates collaboration by identifying integration issues and model regressions early in the development lifecycle.
+
+What happens if the evaluation score is below a defined threshold?
+A Quality Gate is triggered within the pipeline. If the evaluation metric fails to meet the minimum required threshold, the pipeline will fail the build (exit with a non-zero status code), preventing the underperforming model from being registered or promoted for deployment.
+
+How can retraining or drift detection be integrated into this workflow?
+Integration is achieved by adding a monitoring service that tracks model and data performance in production. If this service detects data drift or concept drift, it triggers the CI/CD pipeline to execute an automated retraining workflow.
+
+What steps are needed to deploy this workflow to production (e.g., AWS, Kubernetes)?
+The essential steps are containerization of the inference service (using Docker), pushing the image to a container registry (e.g., ECR or DockerHub), and then triggering a Continuous Deployment (CD) job. This job uses an orchestration platform (like Kubernetes or a cloud-native service) to serve the model.
 
 Deliverables:
-1 GitHub repository link containing your implemented workflow.
-2 Screenshot of a successful workflow run with artifacts visible.
-3 (Optional) Modified workflow with PR trigger or quality gate step.
+1 GitHub repository link containing your implemented workflow. - done
+2 Screenshot of a successful workflow run with artifacts visible. - done
+3 (Optional) Modified workflow with PR trigger or quality gate step. - done

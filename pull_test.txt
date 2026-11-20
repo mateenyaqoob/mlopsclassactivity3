@@ -1,0 +1,1 @@
+Check whether the pull_requests trigger works properly.
